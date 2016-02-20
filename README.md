@@ -4,6 +4,20 @@
 
 A high-productivity web framework for the [Go language](http://www.golang.org/).
 
+### Build webapp:
+
+You need to have node v0.12.7 & npm v2.11.3.
+
+Install all modules:
+```sh
+npm install
+```
+
+Build webapp:
+```sh
+npm run dev
+```
+
 ### Start the web server:
 
     revel run myapp
