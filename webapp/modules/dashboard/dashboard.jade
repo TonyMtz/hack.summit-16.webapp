@@ -1,2 +1,9 @@
 #dashboard
     h1 Hello {{name}}!
+
+    button(data-ng-click="dc.getCards()") Get Cards
+
+    ul(data-ng-repeat="card in dc.cards")
+        li
+            h4 {{card.Title}}
+            span(data-ng-repeat="tag in card.Tags") {{tag.Name}} &nbsp;
