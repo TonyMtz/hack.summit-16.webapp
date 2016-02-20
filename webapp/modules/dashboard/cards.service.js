@@ -1,5 +1,3 @@
-let moduleName = 'dashboard.services';
-
 const HTTP = new WeakMap();
 const CONFIG = new WeakMap();
 
