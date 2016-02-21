@@ -1,2 +1,150 @@
+colorAccent = #E85444
+colorBase = #222222
+colorText = #ffffff
+
+// mixins
+
+.button
+  background colorAccent
+  line-height 32px
+  color colorText
+  border-radius 3px
+  box-shadow 0 4px 0 darken(colorAccent, 25%)
+  padding 0 10px
+  display inline-block
+
+*
+  box-sizing border-box
+
+body{
+  margin 0
+  padding 0
+  font 16px/1.5 -apple-system, "Helvetica Neue", "Lucida Grande"
+}
+
 #dashboard
-  color #006600
+  background colorBase
+  color colorText
+  margin 0
+  padding 0
+  position relative
+  height 100vh
+  transition .3s ease-in all
+
+h1
+h2
+h3
+h4
+  font-size 1em
+
+header
+  background  #000
+  color #fff
+  line-height 60px
+  text-align center
+  position relative
+
+  .logout
+    @extend .button
+    position absolute
+    top 14px
+    right 30px
+
+.info
+  padding 30px
+
+  .team
+    line-height: 20px;
+    margin: 0;
+
+.members
+  width 100%
+  height calc(100vh - 140px)
+  padding 0 30px
+  overflow  scroll
+  white-space nowrap
+
+  .container
+    width 2100px
+    margin-right 30px
+
+.member
+  width 300px
+  display block
+  float left
+
+  .name
+    background colorAccent
+    padding 0 30px
+    line-height 40px
+    margin 0
+
+.todo
+  margin 0
+  padding 0
+  list-style none
+
+  li
+    padding 0 30px
+    line-height 40px
+    background lighten(colorBase, 5%)
+
+    &:nth-child(even)
+      background lighten(colorBase, 10%)
+
+.backlog
+  background lighten(colorBase, 5%)
+  color #fff
+  width 300px
+  position fixed
+  top 0
+  left -300px
+  bottom 0
+  transition .3s ease-in all
+
+  .heading
+    background colorBase
+    padding 0 30px
+    line-height 60px
+    margin 0
+    position relative
+
+    .close
+      @extend .button
+      font-size 12px
+      text-transform uppercase
+      font-weight bold
+      position absolute
+      top 14px
+      right 30px
+      cursor pointer
+
+.toggle-backlog-label{
+  @extend .button
+  font-size 12px
+  text-transform uppercase
+  font-weight bold
+  position absolute
+  top 14px
+  left 30px
+  opacity 1
+  transition .3s ease-in opacity
+  cursor pointer
+}
+
+.fade
+  opacity .5
+  margin-left: .5em
+  font-weight normal
+
+.toggle-backlog
+  display none
+
+.toggle-backlog:checked + #dashboard
+  margin-left 300px
+
+.toggle-backlog:checked + #dashboard .backlog
+  left: 0
+
+.toggle-backlog:checked + #dashboard .toggle-backlog-label
+  opacity: 0
