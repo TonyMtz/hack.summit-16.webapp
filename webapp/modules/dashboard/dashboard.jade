@@ -15,26 +15,13 @@ input#toggle-backlog.toggle-backlog(type='checkbox', name='toggle-backlog')
 
     .members
         .container
-            each i in new Array(7)
-                .member
-                    h2.name Nombre
-                    ul.todo
-                        li item 1
-                        li item 2
-                        li item 3
-                        li item 4
-                        li item 5
+            .member
+                h2.name Name
+                ul.todo
+                    li(data-ng-repeat='card in dc.cards') {{card.Title}}
 
     .backlog
         h2.heading
             | Backlog
             span.fade 10 items
             label(for='toggle-backlog').close Close
-
-    h1 Hello {{name}}!
-
-    ul(data-ng-repeat='card in dc.cards')
-        li
-            h4 {{card.Title}}
-            span(data-ng-repeat='tag in card.Tags') {{tag.Name}} &nbsp;
-
