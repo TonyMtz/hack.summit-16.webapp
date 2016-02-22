@@ -15,8 +15,6 @@ export default class DashboardController {
     let $scope = SCOPE.get(this);
     let $window = WINDOW.get(this);
 
-    $scope.name = 'Dashboard';
-
     $scope.isTrello = false;
     $scope.isWunderlist = false;
 
