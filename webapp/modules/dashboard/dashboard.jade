@@ -1,26 +1,40 @@
-input(type='checkbox', name='toggle-backlog').toggle-backlog#toggle-backlog
-#dashboard
+input#toggle-backlog.toggle-backlog(type='checkbox', name='toggle-backlog')
+#dashboard(data-ng-init='dc.init()')
     header
-      | Hack Summit Team
-      a.logout(href='#') Logout
-      label(for='toggle-backlog').toggle-backlog-label Backlog
-    .info
-      p.team
         | Hack Summit Team
-        span.fade 7 members
+        a.logout(href='#') Logout
+        label.toggle-backlog-label(for='toggle-backlog') Backlog
+
+    .info
+        p.team
+            | Hack Summit Team
+            span.fade 7 members
+            button(data-ng-click='dc.getCards()') Refresh
+            button(data-ng-click='dc.loginWL()' data-ng-hide='isWunderlist') Wunderlist
+            button(data-ng-click='dc.loginTrello()' data-ng-hide='isTrello') Trello
+
     .members
-      .container
-        each i in new Array(7)
-          .member
-            h2.name Nombre
-            ul.todo
-              li item 1
-              li item 2
-              li item 3
-              li item 4
-              li item 5
+        .container
+            each i in new Array(7)
+                .member
+                    h2.name Nombre
+                    ul.todo
+                        li item 1
+                        li item 2
+                        li item 3
+                        li item 4
+                        li item 5
+
     .backlog
-      h2.heading
-        | Backlog
-        span.fade 10 items
-        label(for='toggle-backlog').close Close
+        h2.heading
+            | Backlog
+            span.fade 10 items
+            label(for='toggle-backlog').close Close
+
+    h1 Hello {{name}}!
+
+    ul(data-ng-repeat='card in dc.cards')
+        li
+            h4 {{card.Title}}
+            span(data-ng-repeat='tag in card.Tags') {{tag.Name}} &nbsp;
+
