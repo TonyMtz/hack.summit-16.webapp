@@ -9,9 +9,10 @@ input#toggle-backlog.toggle-backlog(type='checkbox', name='toggle-backlog')
         p.team
             | Hack Summit Team
             span.fade 7 members
-            button(data-ng-click='dc.getCards()') Refresh
-            button(data-ng-click='dc.loginWL()' data-ng-hide='isWunderlist') Wunderlist
-            button(data-ng-click='dc.loginTrello()' data-ng-hide='isTrello') Trello
+            .controls
+              button(data-ng-click='dc.getCards()') Refresh
+              button(data-ng-click='dc.loginWL()' data-ng-hide='isWunderlist') Wunderlist
+              button(data-ng-click='dc.loginTrello()' data-ng-hide='isTrello') Trello
 
     .members
         .container

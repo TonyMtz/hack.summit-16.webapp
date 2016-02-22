@@ -8,10 +8,15 @@ colorText = #ffffff
   background colorAccent
   line-height 32px
   color colorText
+  font-size 12px
+  text-transform uppercase
+  font-weight bold
   border-radius 3px
   box-shadow 0 4px 0 darken(colorAccent, 25%)
   padding 0 10px
   display inline-block
+  text-decoration none
+  cursor pointer
 
 *
   box-sizing border-box
@@ -52,10 +57,19 @@ header
 
 .info
   padding 30px
+  overflow hidden
 
   .team
-    line-height: 20px;
-    margin: 0;
+    line-height 20px
+    margin 0
+    float left
+
+  .controls
+    float right
+
+    button
+      @extend .button
+      border none
 
 .members
   width 100%
@@ -121,9 +135,6 @@ header
 
 .toggle-backlog-label{
   @extend .button
-  font-size 12px
-  text-transform uppercase
-  font-weight bold
   position absolute
   top 14px
   left 30px
